@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public ButtonClick downRightBtn;
 
     [SerializeField] private float speed = 0;
-    [SerializeField] private float dist = 0;
+    private float dist = 1;
 
     Vector3 pos;
     Transform tr;
