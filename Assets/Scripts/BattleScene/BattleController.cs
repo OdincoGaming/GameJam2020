@@ -51,135 +51,21 @@ public class BattleController : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        var total = PlayerInstChar.attr.Agility + EnemyInstChar.attr.Agility;
-        var flip = Random.Range(0, total);
-
-        //super basic decider for who goes first, not needed because were changing up how the rounds work
-        if (flip > PlayerInstChar.attr.Agility)
-        {
-            _state = BattleState.EnemyTurn;
-            StartCoroutine(EnemyTurn());
-        }
-        else
-        {
-            _state = BattleState.PlayerTurn;
-            StartCoroutine(PlayerTurn());
-        }
+        PreRound();
     }
 
-    private IEnumerator PlayerTurn()
+    public void PreRound()
     {
-        buttonListener.ResetSelectionArea();
-
-        Interface.SetDialogText("Choose an action.");
-
-        yield break;
+        // do stuff
     }
 
-    private IEnumerator EnemyTurn()
+    public void MidRound()
     {
-        string enemyMove = utilities.SelectEnemyMove(EnemyInstChar, PlayerInstChar, _state);
-        Interface.SetDialogText($"{enemyMove}");
-        bool isDead = false;
-
-        yield return new WaitForSeconds(1f);
-
-        if (isDead)
-        {
-            _state = BattleState.Lost;
-            StartCoroutine(EndGame());
-        }
-        else
-        {
-            _state = BattleState.PlayerTurn;
-            StartCoroutine(PlayerTurn());
-        }
-    }
-    private IEnumerator EndGame()
-    {
-        switch (_state)
-        {
-            case BattleState.Won:
-                Interface.SetDialogText("You won the battle!");
-                break;
-            case BattleState.Lost:
-                Interface.SetDialogText("You were defeated.");
-                break;
-            default:
-                Interface.SetDialogText("The match was a stalemate!");
-                break;
-        }
-        yield break;
+        // do stuff
     }
 
-    private IEnumerator PlayerAttack(Attack attack)
-    {
-        bool isDead = false;
-
-        Interface.SetDialogText($"You {attack.Name} at {EnemyInstChar.attr.Name}");
-        utilities.UseAttack(attack, PlayerInstChar, EnemyInstChar);
-
-        yield return new WaitForSeconds(1f);
-
-        if (isDead)
-        {
-            _state = BattleState.Lost;
-            StartCoroutine(EndGame());
-        }
-        else
-        {
-            _state = BattleState.EnemyTurn;
-            StartCoroutine(EnemyTurn());
-        }
-
-    }
-    private IEnumerator PlayerDefends()
-    {
-        if(_state == BattleState.PlayerTurn)
-        {
-            bool isDead = false;
-
-            Interface.SetDialogText($"{PlayerInstChar.attr.Name} defends");
-
-            yield return new WaitForSeconds(1f);
-
-            if (isDead)
-            {
-                _state = BattleState.Lost;
-                StartCoroutine(EndGame());
-            }
-            else
-            {
-                _state = BattleState.EnemyTurn;
-                StartCoroutine(EnemyTurn());
-            }
-        }
-    }
-
-    public void OnAttackButton()
+    public void PostRound()
     {
 
-        if(_state == BattleState.PlayerTurn)
-        {
-            buttonListener.selectionArea.SetActive(false);
-            StartCoroutine(PlayerAttack(PlayerInstChar.attack));
-        }
-        else
-        {
-            return;
-        }
-    }
-
-    public void OnDefendButton()
-    {
-        if (_state == BattleState.PlayerTurn)
-        {
-            buttonListener.selectionArea.SetActive(false);
-            StartCoroutine(PlayerDefends());
-        }
-        else
-        {
-            return;
-        }
     }
 }

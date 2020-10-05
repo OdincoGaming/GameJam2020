@@ -1,8 +1,9 @@
 ﻿public enum BattleState
 {
     Beginning,
-    PlayerTurn,
-    EnemyTurn,
+    PreRound,
+    MidRound,
+    PostRound,
     Won,
     Lost
 }

@@ -9,14 +9,14 @@ public class ButtonListener : MonoBehaviour
     public BattleController controller;
 
     public Button attackButton;
-    public Button DefendButton;
+    public Button defendButton;
 
     public GameObject selectionArea;
 
     void Start()
     {
-        attackButton.onClick.AddListener(controller.OnAttackButton);
-        DefendButton.onClick.AddListener(controller.OnDefendButton);
+        //attackButton.onClick.AddListener(controller.OnAttackButton);
+       //defendButton.onClick.AddListener(controller.OnDefendButton);
     }
 
     public void ChangeButtonText(Button btn, string text)
