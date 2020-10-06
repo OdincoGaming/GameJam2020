@@ -54,18 +54,52 @@ public class BattleController : MonoBehaviour
         PreRound();
     }
 
-    public void PreRound()
+    private IEnumerator MidRoundAction()
     {
-        // do stuff
+
+        yield return new WaitForSeconds(2f);
     }
 
-    public void MidRound()
+    public void PreRound()
     {
-        // do stuff
+        //display player ui
+    }
+
+    public void Switch(int pos)
+    {
+        //remove stats
+        //play anim
+        //load swapped out character stats
+
+        MidRound(new SwitchAction());
+    }
+
+    public void MidRound(Action action)
+    {
+        //do ai action
+
+        //swaps count as first move always if swap is used
+
+        //first person attacks(if no swaps)
+        //does attack animation and changes stats
+        //if someone dies, play death anim
+        //load new char or EndBattle()
+
+        //seconf person attacks(if no swaps)
+        //does attack animation and changes stats
+        //if someone dies, play death anim
+        //load new char or EndBattle()
+
+        //round based effects are done
     }
 
     public void PostRound()
     {
+        //go to being round
+    }
 
+    public void EndBattle()
+    {
+        //play win or defeat
     }
 }

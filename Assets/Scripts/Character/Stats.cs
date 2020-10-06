@@ -22,11 +22,11 @@ public class Stats : MonoBehaviour
         //do something
     }
 
-    public void receiveAttack(Attack attack)
+    public void receiveAttack(AttackAction attack)
     {
         _currentHealth -= attack.Damage;
     }
-    public void useAttack(Attack attack)
+    public void useAttack(AttackAction attack)
     {
         //do something
     }

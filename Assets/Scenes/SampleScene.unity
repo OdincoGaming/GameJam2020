@@ -1567,7 +1567,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 864106697}
   attackButton: {fileID: 2032454345}
-  DefendButton: {fileID: 603724545}
+  defendButton: {fileID: 0}
   selectionArea: {fileID: 1692954180}
 --- !u!114 &864106695
 MonoBehaviour:
@@ -3027,19 +3027,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1714929642}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ace5d3b76e8bbd94d8faa070310b062d, type: 3}
+  m_Script: {fileID: 11500000, guid: 21322d0ecc8ed5147aa00e51f0c465f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 5674484368629161613, guid: 10021f1ffb851ee42a2f9e2ce33428b7,
-    type: 3}
-  enemyPrefab: {fileID: 5046871492963100558, guid: 302bdc8dead690247957754e115acde3,
-    type: 3}
-  playerBattleStation: {fileID: 776899475}
-  enemyBattleStation: {fileID: 1466009198}
-  dialogueText: {fileID: 0}
-  playerHUD: {fileID: 0}
-  enemyHUD: {fileID: 0}
-  state: 0
+  _state: 0
+  ui: {fileID: 0}
+  utilities: {fileID: 0}
+  playerPrefab: {fileID: 0}
+  enemyPrefab: {fileID: 0}
+  playerParent: {fileID: 0}
+  enemyParent: {fileID: 0}
+  buttonListener: {fileID: 0}
 --- !u!4 &1714929644
 Transform:
   m_ObjectHideFlags: 0

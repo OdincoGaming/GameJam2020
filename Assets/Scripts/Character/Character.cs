@@ -7,7 +7,7 @@ public class Character : MonoBehaviour
 {
     public Attributes attr;
     public Stats stats;
-    public Attack attack;
+    public AttackAction attack;
     public Animator animator;
     public AnimatorOverrideController animOverride;
     public AnimationClip Idle;

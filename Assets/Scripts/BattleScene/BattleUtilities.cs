@@ -6,7 +6,7 @@ using UnityEditor.Animations;
 public class BattleUtilities : MonoBehaviour
 {
     [SerializeField] private BattleController battle;
-    public void UseAttack(Attack attack, Character user, Character target)
+    public void UseAttack(AttackAction attack, Character user, Character target)
     {
         user.UpdateAnimator(attack.UserAnimation);
 
