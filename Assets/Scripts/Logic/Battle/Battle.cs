@@ -89,7 +89,7 @@ public class Battle : MonoBehaviour
         MidRound(new SwitchAction());
     }
 
-    public void MidRound(Action action)
+    public void MidRound(SAction action)
     {
         //do ai action
 
