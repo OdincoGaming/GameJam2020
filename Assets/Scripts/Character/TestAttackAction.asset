@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6462e9311398e2443a560852b313c14f, type: 3}
   m_Name: TestAttackAction
   m_EditorClassIdentifier: 
+  actionType: 0
   _name: 
-  _dmg: 0
-  userAnim: {fileID: 0}
   _dmg: 0
   userAnim: {fileID: 0}
