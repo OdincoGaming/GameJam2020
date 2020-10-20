@@ -3,7 +3,8 @@ using UnityEngine.EventSystems;
 
 public class ButtonClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-    public bool buttonPressed;
+    [SerializeField]
+    private bool buttonPressed;
 
     public void OnPointerDown(PointerEventData eventData)
     {
@@ -13,5 +14,10 @@ public class ButtonClick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         buttonPressed = false;
+    }
+
+    public bool isButtonPressed()
+    {
+        return buttonPressed;
     }
 }

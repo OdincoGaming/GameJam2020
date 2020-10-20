@@ -29,35 +29,35 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (upBtn.buttonPressed && tr.position == pos)
+        if (upBtn.isButtonPressed() && tr.position == pos)
         {
             pos += new Vector3(0,dist, 0);
         }
-        else if (upLeftBtn.buttonPressed && tr.position == pos)
+        else if (upLeftBtn.isButtonPressed() && tr.position == pos)
         {
             pos += new Vector3(-dist,dist, 0);
         }
-        else if (upRightBtn.buttonPressed && tr.position == pos)
+        else if (upRightBtn.isButtonPressed() && tr.position == pos)
         {
             pos += new Vector3(dist,dist, 0);
         }
-        else if (leftBtn.buttonPressed && tr.position == pos)
+        else if (leftBtn.isButtonPressed() && tr.position == pos)
         {
             pos += new Vector3(-dist,0, 0);
         }
-        else if (rightBtn.buttonPressed && tr.position == pos)
+        else if (rightBtn.isButtonPressed() && tr.position == pos)
         {
             pos += new Vector3(dist,0, 0);
         }
-        else if (downBtn.buttonPressed && tr.position == pos)
+        else if (downBtn.isButtonPressed() && tr.position == pos)
         {
             pos += new Vector3(0, -dist, 0);
         }
-        else if (downLeftBtn.buttonPressed && tr.position == pos)
+        else if (downLeftBtn.isButtonPressed() && tr.position == pos)
         {
             pos += new Vector3(-dist, -dist, 0);
         }
-        else if (downRightBtn.buttonPressed && tr.position == pos)
+        else if (downRightBtn.isButtonPressed() && tr.position == pos)
         {
             pos += new Vector3(dist, -dist, 0);
         }
